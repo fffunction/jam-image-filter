@@ -1,4 +1,4 @@
-PIL
+PILLOW
 sh
 scipy
 numpy
