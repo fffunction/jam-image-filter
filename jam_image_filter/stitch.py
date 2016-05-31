@@ -1,17 +1,17 @@
 import sys
 import aggdraw
 import math
-import Image
+from PIL import Image
 import scipy.spatial.distance as distance
 import numpy as np
-from ImageEnhance import Contrast
+from PIL.ImageEnhance import Contrast
 import util
 import random
 
 def stitch(im, pixelation=12):
     im = im.convert('RGB')
 
-    im = util.resize_jam_background(im)
+    # im = util.resize_jam_background(im)
     width, height = im.size
 
     # pixelate

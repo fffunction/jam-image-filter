@@ -1,5 +1,5 @@
-PILLOW
-sh
-scipy
-numpy
--e git+https://github.com/jakul/aggdraw.git#egg=aggdraw
+PILLOW==3.2.0
+sh==1.11
+scipy==0.17.1
+numpy==1.11.0
+git+git://github.com/fffunction/aggdraw@c909a4fe0bbfaaeba1de3ef575f5ac7175169fc6#egg=aggdraw

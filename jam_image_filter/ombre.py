@@ -1,8 +1,8 @@
 import os
 import sys
 import math
-import Image
-import ImageOps
+from PIL import Image
+from PIL import ImageOps
 import util
 import colorsys
 import random
@@ -17,7 +17,7 @@ def ombre(image):
     layer = Image.open(os.path.dirname(os.path.abspath(__file__)) + '/' +
                        'assets/ombre.jpg')
     layer = util.random_crop(layer, util.WIDTH, util.HEIGHT)
-    
+
     layer = layer.convert('RGB')
     layer = ImageOps.grayscale(layer)
     layer = ImageOps.colorize(layer, dark, light)

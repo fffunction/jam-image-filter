@@ -1,8 +1,8 @@
 import os
 import sys
 import math
-import Image
-import ImageOps
+from PIL import Image
+from PIL import ImageOps
 import util
 import colorsys
 import random

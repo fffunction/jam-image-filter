@@ -1,6 +1,6 @@
 import sys
 import math
-import Image
+from PIL import Image
 import numpy as np
 import util
 import sh
@@ -19,7 +19,7 @@ def glitch(im, min_pixelation=3, max_pixelation=18, max_attempts=20,
         sys.exit(1)
 
     im = im.convert('RGB')
-    im = util.resize_jam_background(im)
+    # im = util.resize_jam_background(im)
     width, height = im.size
 
     pixelation = random.random() % (max_pixelation - min_pixelation) + min_pixelation
@@ -56,7 +56,7 @@ def glitch(im, min_pixelation=3, max_pixelation=18, max_attempts=20,
 
     os.unlink(infile.name)
     os.unlink(outfile.name)
-        
+
     return im
 
 if __name__ == '__main__':

@@ -5,7 +5,7 @@ import scipy.cluster
 import scipy.misc
 import operator
 import math
-import Image
+from PIL import Image
 import numpy as np
 import random
 
@@ -37,7 +37,9 @@ def get_dominant_colours(im, n):
     array = scipy.misc.fromimage(im)
     width, height, ncolours = array.shape
     array = array.reshape(width * height, ncolours)
-    codes, dist = scipy.cluster.vq.kmeans(array, n)
+    arr = np.array(array)
+    farr = arr.astype(float)
+    codes, dist = scipy.cluster.vq.kmeans(farr, float(n))
     codes = np.array([map(int, colour) for colour in codes])
 
     codes = pad_colours(codes, n)
@@ -132,7 +134,7 @@ def get_resize_params(im, target_width=WIDTH, target_height=HEIGHT, max_resize=4
     crop_right = int(width - crop_left)
     crop_top = int(max(0, (height - target_height) / 2))
     crop_bottom = int(height - crop_top)
-    
+
     return scale, crop_left, crop_right, crop_top, crop_bottom
 
 def max_size(im, target_width, target_height):

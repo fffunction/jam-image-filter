@@ -2,13 +2,13 @@ import sys
 import math
 import scipy.ndimage as ndimage
 import scipy
-import Image
-import ImageFilter
+from PIL import Image
+from PIL import ImageFilter
 import numpy as np
 import util
 
 def blur(original, sigma=10, darken=True):
-    original = util.resize_jam_background(original)
+    # original = util.resize_jam_background(original)
     original = original.convert('RGB')
 
     if darken:

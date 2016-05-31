@@ -23,7 +23,7 @@
 import sys
 import aggdraw
 import math
-import Image
+from PIL import Image
 import itertools
 import logging
 import util
@@ -227,6 +227,6 @@ if __name__ == '__main__':
     tile_size = 32
     width = util.WIDTH + tile_size - (util.WIDTH % tile_size)
     height = util.HEIGHT + tile_size- (util.HEIGHT % tile_size)
-    image = util.resize_jam_background(image, width, height)
+    # image = util.resize_jam_background(image, width, height)
     image = pxl(image)
     image.save(sys.argv[2], quality=90)

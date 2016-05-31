@@ -1,17 +1,17 @@
 import sys
 import aggdraw
 import math
-import Image
+from PIL import Image
 import util
 import random
-from ImageEnhance import Contrast
+from PIL.ImageEnhance import Contrast
 
 def rnd():
     return 1 + random.randint(-1, 1) / 6.0
 
 def halftone(original, radius=3, border=21, black_and_white=False):
-    original = util.resize_jam_background(original, util.WIDTH + border * 2,
-                                          util.HEIGHT + border * 2)
+    # original = util.resize_jam_background(original, util.WIDTH + border * 2,
+                                          # util.HEIGHT + border * 2)
     original = original.convert('RGB')
     width, height = original.size
 

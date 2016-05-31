@@ -1,12 +1,12 @@
 import sys
 import aggdraw
 import math
-import Image
+from PIL import Image
 import random
 import numpy as np
 import util
 import os.path
-import ImageOps
+from PIL import ImageOps
 
 def get_triangle_path(mid_x, mid_y, min_length = 70, max_length = 70):
     angle = random.random() * (2 * math.pi / 3)
@@ -34,7 +34,7 @@ def triangles(original, n=30, size=150, width=700,
 
     def is_too_close(x, y):
         for centre in centres:
-            if math.sqrt(math.pow(centre[0] - x, 2) + 
+            if math.sqrt(math.pow(centre[0] - x, 2) +
                          math.pow(centre[1] - y, 2)) < min_distance:
                 return True
         return False
