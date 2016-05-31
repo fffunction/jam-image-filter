@@ -2,4 +2,4 @@ PILLOW==3.2.0
 sh==1.11
 scipy==0.17.1
 numpy==1.11.0
-git+git://github.com/fffunction/aggdraw@c909a4fe0bbfaaeba1de3ef575f5ac7175169fc6#egg=aggdraw
+git+git://github.com/fffunction/aggdraw@312caabc194a76994dbd7663f9130a5c4a0a57a3#egg=aggdraw
