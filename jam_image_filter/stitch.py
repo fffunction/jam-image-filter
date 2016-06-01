@@ -22,7 +22,7 @@ def stitch(im, pixelation=12):
     # random bg colour
     colours = util.get_dominant_colours(im, 2)
     colours = map(tuple, colours)
-    colours += [(0,0,0), (255,255,255)]
+    # colours += [(0,0,0), (255,255,255)]
     bg_index = random.randint(0, len(colours) - 1)
 
     width, height = im.size
