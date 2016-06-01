@@ -10,8 +10,10 @@ def rnd():
     return 1 + random.randint(-1, 1) / 6.0
 
 def halftone(original, radius=3, border=21, black_and_white=False):
-    # original = util.resize_jam_background(original, util.WIDTH + border * 2,
-                                          # util.HEIGHT + border * 2)
+
+    owidth, oheight = original.size
+    original = util.resize_jam_background(original, owidth + border * 2,
+                                          oheight + border * 2)
     original = original.convert('RGB')
     width, height = original.size
 
@@ -52,7 +54,7 @@ def halftone(original, radius=3, border=21, black_and_white=False):
             draw.ellipse((x - r * rnd(), y - r * rnd(), x + r * rnd(), y + r * rnd()), pen, brush)
     draw.flush()
 
-    # new = util.centre_crop(new, util.WIDTH, util.HEIGHT)
+    new = util.centre_crop(new, owidth, oheight)
     new = new.point(lambda p: p - 20)
 
     return new
