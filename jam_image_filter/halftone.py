@@ -52,7 +52,7 @@ def halftone(original, radius=3, border=21, black_and_white=False):
             draw.ellipse((x - r * rnd(), y - r * rnd(), x + r * rnd(), y + r * rnd()), pen, brush)
     draw.flush()
 
-    new = util.centre_crop(new, util.WIDTH, util.HEIGHT)
+    # new = util.centre_crop(new, util.WIDTH, util.HEIGHT)
     new = new.point(lambda p: p - 20)
 
     return new
